@@ -1,0 +1,79 @@
+.title{
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.title:hover{
+    color: rgb(15, 104, 206);
+   
+}
+
+.images{
+    padding: 10px;
+    height: 90px;
+    width: 90px;
+}
+body{
+    background-color: rgb(255, 255, 255);
+}
+.container{
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    
+    box-shadow: 4px 4px 4px 4px rgb(43, 42, 42);
+    border-radius: 14px;
+}
+strong{
+    color: rgb(0, 0, 0);
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+h3{
+    margin-top: 10px;
+   margin-left:10px ;
+   margin-bottom: 0px;
+}
+.row1{
+   
+    padding: 5px;
+    display: flex;
+    align-items: start;
+    justify-content: left;
+    overflow-y: auto;
+}
+.items{
+    height: 190px;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 30px;
+    background-color: rgb(193, 199, 199);
+    border-radius: 15px;
+    border: 2px solid black;
+    flex-shrink: 0;
+}
+.items:hover{
+    height: 185px;
+    width: 175px;
+    transition-duration: .5s;
+    transition-timing-function: ease-in;
+    background-color: rgb(192, 69, 69);
+}
+.addtocard{
+  height: 40px;
+margin-bottom: 20px;
+background-color: rgb(47, 182, 47);
+border-radius: 9px;
+color: rgb(0, 0, 0);
+font-size:small;
+}
+input{
+    height: 30px;
+    width: 300px;
+    color: black;
+}
