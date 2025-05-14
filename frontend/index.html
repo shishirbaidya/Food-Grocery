@@ -7,9 +7,21 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="title">
-        <h2>WELCOME</h2>
-        <h1>Fruits&Grocery</h1></div>
+    <!--************HEAD ITEMS DIV******************      -->
+    <div class="HEAD">
+        <div class="title">
+           <img  class="grocery-image" src="images/grocery.png" alt="GroceryImage">
+        </div>
+        <div class="title">
+            <h2>WELCOME</h2>
+            <h1>Fruits&Grocery</h1>
+        </div>
+        <div class="title">
+            <h2>PROFILE</h2>
+            <h1>2025</h1>
+        </div>
+    </div>
+
     <div class="input">
         <search>Search :</search>
         <input id="searchitem" type="text" oninput="removee('.container',)" placeholder="search items here,"></input>
@@ -17,235 +29,36 @@
     <!--Fruit section-->
     <div class="container">
         <h3>Fruits :</h3>
-        <div class="row1">
-
-            <div class="items">
-                <img class="images" src="images/apple.png" alt="Food">
-                <strong>Apple:3.44$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-
-            <div class="items">
-                <img class="images" src="images/banana.png" alt="Food">
-                <strong>Banana:2.00$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-
-            <div class="items">
-                <img class="images" src="images/lemon.png" alt="Food">
-                <strong>Lemon:1.44$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-
-            <div class="items">
-                <img class="images" src="images/mango.png" alt="Food">
-                <strong>Mango:3.44$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-
-            <div class="items">
-                <img class="images" src="images/vegetable.png" alt="Food">
-                <strong>VegBox:.44$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-
-            <div class="items">
-                <img class="images" src="images/watermelon.png" alt="Food">
-                <strong>watermelon:3.5$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-            <div class="items">
-                <img class="images" src="images/carrot.png" alt="Food">
-                <strong>Carrot:1.5$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-            <div class="items">
-                <img class="images" src="images/avocado.png" alt="Food">
-                <strong>Avocado:7.5$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-        
-
-
-            
-           
+        <div id="row1" class="row">
+            <!--For dynamic items-->
 
         </div>
     </div>
     <div class="container">
-         <!--Snacks section-->
-        <h3>Snacks :</h3>
-        <div class="row1">
-
-            <div class="items">
-                <img class="images" src="images/instant-coffee.png" alt="Food">
-                <strong>Coffee:6.44$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-
-            <div class="items">
-                <img class="images" src="images/snack.png" alt="Food">
-                <strong>Chocolate:1.80$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-
-            <div class="items">
-                <img class="images" src="images/snacks.png" alt="Food">
-                <strong>Snaks:2.00$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-            <div class="items">
-                <img class="images" src="images/cheese.png" alt="Food">
-                <strong>cheese:3.44$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-
-            <div class="items">
-                <img class="images" src="images/water-bottle.png" alt="Food">
-                <strong>WaterBottle:.75$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-            <div class="items">
-                <img class="images" src="images/tea-box.png" alt="Food">
-                <strong>TeaBag:8.00$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-            <div class="items">
-                <img class="images" src="images/toothbrush.png" alt="Food">
-                <strong>ToothBrush:2.00$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-            <div class="items">
-                <img class="images" src="images/soda.png" alt="Food">
-                <strong>Juice:1.00$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-            <div class="items">
-                <img class="images" src="images/oil.png" alt="Food">
-                <strong>OilSet:3.5$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-            <div class="items">
-                <img class="images" src="images/cooking-oil.png" alt="Food">
-                <strong>CookingOil:5.5$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-
-            <div class="items">
-                <img class="images" src="images/dango.png" alt="Food">
-                <strong>Lolipop:1.5$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div> 
-            <div class="items">
-                <img class="images" src="images/donut.png" alt="Food">
-                <strong>donut:.45$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-            
-            <div class="items">
-                <img class="images" src="images/pie.png" alt="Food">
-                <strong>PieCake:3.5$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-            <div class="items">
-                <img class="images" src="images/pie (1).png" alt="Food">
-                <strong>Hotcake:3.5$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-            <div class="items">
-                <img class="images" src="images/egg.png" alt="Food">
-                <strong>Eggs:2.5$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-
+        <h3>Snacks & Drinks :</h3>
+        <div id="row2" class="row">
+            <!--For dynamic items-->
 
         </div>
     </div>
     <div class="container">
-        <h3>Vegetables & Meat :</h3>
-         <!--Vegetable and Meat section-->
-        <div class="row1">
+        <h3>Foods :</h3>
+        <div id="row3" class="row">
+            <!--For dynamic items-->
 
-            <div class="items">
-                <img class="images" src="images/meatloaf.png" alt="Food">
-                <strong>Meat:8.00$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-
-            <div class="items">
-                <img class="images" src="images/spring-onion.png" alt="Food">
-                <strong>SpringOnion:1.80$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-
-            <div class="items">
-                <img class="images" src="images/greenchilli.png" alt="Food">
-                <strong>Green chilli:1.50$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-
-            <div class="items">
-                <img class="images" src="images/lobster.png" alt="Food">
-                <strong>Lobster:3.75$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-
-            <div class="items">
-                <img class="images" src="images/spice.png" alt="Food">
-                <strong>RedChilli:2.2$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-            <div class="items">
-                <img class="images" src="images/onion.png" alt="Food">
-                <strong>Onion:1.80$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
-            <div class="items">
-                <img class="images" src="images/bottlegourd.png" alt="Food">
-                <strong>BottleGourd:3.44$</strong>
-                <button class="addtocard" >Add To Card</button>
-             
-            </div>
         </div>
     </div>
+    <div class="container">
+        <h3>Meat & Vegetable:</h3>
+        <div id="row4" class="row">
+            <!--For dynamic items-->
+
+        </div>
+    </div>
+    
 </body>
-<script>
-   function removee(container) {
-  document.querySelectorAll(container).forEach(element => {
-    element.style.display = "none";
+<script src="index.js">
 
-
-  });
-}
 
 </script>
 </html>
