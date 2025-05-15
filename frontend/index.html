@@ -1,64 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fruits&Grocery</title>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fruits & Grocery</title>
+  <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-    <!--************HEAD ITEMS DIV******************      -->
-    <div class="HEAD">
-        <div class="title">
-           <img  class="grocery-image" src="images/grocery.png" alt="GroceryImage">
-        </div>
-        <div class="title">
-            <h2>WELCOME</h2>
-            <h1>Fruits&Grocery</h1>
-        </div>
-        <div class="title">
-            <h2>PROFILE</h2>
-            <h1>2025</h1>
-        </div>
+  <!-- HEADER -->
+  <div class="HEAD">
+    <div class="title">
+      <img id="logo" class="grocery-image" src="images/grocery.png" alt="Grocery Logo" />
     </div>
+    <div class="title">
+      <h2>WELCOME</h2>
+      <h1>Fruits & Grocery</h1>
+    </div>
+    <div class="title">
+      <button id="profileBtn">Profile</button>
+    </div>
+  </div>
 
-    <div class="input">
-        <search>Search :</search>
-        <input id="searchitem" type="text" oninput="removee('.container',)" placeholder="search items here,"></input>
-    </div>
-    <!--Fruit section-->
+  <!-- SEARCH BAR -->
+  <div id="searchBar" class="input">
+    <label for="searchInput"><strong>Search:</strong></label>
+    <input id="searchInput" type="text" placeholder="Search items here..." />
+  </div>
+
+  <!-- MAIN VIEW -->
+  <div id="main-view">
     <div class="container">
-        <h3>Fruits :</h3>
-        <div id="row1" class="row">
-            <!--For dynamic items-->
-
-        </div>
-    </div>
-    <div class="container">
-        <h3>Snacks & Drinks :</h3>
-        <div id="row2" class="row">
-            <!--For dynamic items-->
-
-        </div>
+      <h3>Fruits:</h3>
+      <div id="row1" class="row"></div>
     </div>
     <div class="container">
-        <h3>Foods :</h3>
-        <div id="row3" class="row">
-            <!--For dynamic items-->
-
-        </div>
+      <h3>Snacks & Drinks:</h3>
+      <div id="row2" class="row"></div>
     </div>
     <div class="container">
-        <h3>Meat & Vegetable:</h3>
-        <div id="row4" class="row">
-            <!--For dynamic items-->
-
-        </div>
+      <h3>Foods:</h3>
+      <div id="row3" class="row"></div>
     </div>
-    
+    <div class="container">
+      <h3>Meat & Vegetable:</h3>
+      <div id="row4" class="row"></div>
+    </div>
+  </div>
+
+  <!-- PROFILE SECTION -->
+  <div id="profileSection" style="display: none;">
+    <div class="profile-container">
+      <div class="profile-info">
+        <h2>Account Info</h2>
+        <p><strong>Name:</strong> <span id="userName"></span></p>
+        <p><strong>Email:</strong> <span id="userEmail"></span></p>
+      </div>
+
+      <div class="profile-items">
+        <h2>Cart Items</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Item</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody id="cartTable"></tbody>
+        </table>
+      </div>
+
+      <div style="text-align: right; margin-top: 10px;">
+        <button id="confirmBtn">Confirm Order</button>
+      </div>
+
+      <div class="profile-history">
+        <h2>Purchase History</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Item</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody id="historyTable"></tbody>
+        </table>
+      </div>
+
+      <div style="text-align: left; margin-top: 20px;">
+        <button id="backBtn">Back to Main View</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
 </body>
-<script src="index.js">
-
-
-</script>
 </html>
