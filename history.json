@@ -43,34 +43,34 @@
     {
       "items": [
         {
+          "image": "/static/images/french-fries.png",
           "name": "Fries",
-          "price": 2.5,
-          "image": "/static/images/french-fries.png"
+          "price": 2.5
         },
         {
+          "image": "/static/images/french-fries.png",
           "name": "Fries",
-          "price": 2.5,
-          "image": "/static/images/french-fries.png"
+          "price": 2.5
         },
         {
+          "image": "/static/images/donut.png",
           "name": "Donut",
-          "price": 2.5,
-          "image": "/static/images/donut.png"
+          "price": 2.5
         },
         {
+          "image": "/static/images/burger.png",
           "name": "Burger",
-          "price": 2.5,
-          "image": "/static/images/burger.png"
+          "price": 2.5
         },
         {
+          "image": "/static/images/pie.png",
           "name": "Pie",
-          "price": 2.5,
-          "image": "/static/images/pie.png"
+          "price": 2.5
         },
         {
+          "image": "/static/images/prawn.png",
           "name": "Prawn",
-          "price": 2.5,
-          "image": "/static/images/prawn.png"
+          "price": 2.5
         }
       ],
       "timestamp": "5/16/2025, 1:44:34 AM"
@@ -78,62 +78,72 @@
     {
       "items": [
         {
+          "image": "/static/images/lobster.png",
           "name": "Lobster",
-          "price": 2.5,
-          "image": "/static/images/lobster.png"
+          "price": 2.5
         },
         {
+          "image": "/static/images/lobster.png",
           "name": "Lobster",
-          "price": 2.5,
-          "image": "/static/images/lobster.png"
+          "price": 2.5
         },
         {
+          "image": "/static/images/chicken.png",
           "name": "Chicken",
-          "price": 2,
-          "image": "/static/images/chicken.png"
+          "price": 2
         },
         {
+          "image": "/static/images/chicken.png",
           "name": "Chicken",
-          "price": 2,
-          "image": "/static/images/chicken.png"
+          "price": 2
         },
         {
+          "image": "/static/images/chickenliver.png",
           "name": "Chicken Liver",
-          "price": 2.5,
-          "image": "/static/images/chickenliver.png"
+          "price": 2.5
         },
         {
+          "image": "/static/images/chickenliver.png",
           "name": "Chicken Liver",
-          "price": 2.5,
-          "image": "/static/images/chickenliver.png"
+          "price": 2.5
         },
         {
+          "image": "/static/images/fruit.png",
           "name": "Orange",
-          "price": 2.5,
-          "image": "/static/images/fruit.png"
+          "price": 2.5
         },
         {
+          "image": "/static/images/fruit.png",
           "name": "Orange",
-          "price": 2.5,
-          "image": "/static/images/fruit.png"
+          "price": 2.5
         },
         {
+          "image": "/static/images/avocado.png",
           "name": "Avocado",
-          "price": 2.5,
-          "image": "/static/images/avocado.png"
+          "price": 2.5
         },
         {
+          "image": "/static/images/avocado.png",
           "name": "Avocado",
-          "price": 2.5,
-          "image": "/static/images/avocado.png"
+          "price": 2.5
         },
         {
+          "image": "/static/images/handmasala.png",
           "name": "Masala",
-          "price": 2.5,
-          "image": "/static/images/handmasala.png"
+          "price": 2.5
         }
       ],
       "timestamp": "5/16/2025, 1:45:10 AM"
+    },
+    {
+      "items": [
+        {
+          "name": "Carrot",
+          "price": 2.5,
+          "image": "/static/images/carrot.png"
+        }
+      ],
+      "timestamp": "5/16/2025, 9:44:43 AM"
     }
   ],
   "shesir.baidya.241@northsouth.edu": [
