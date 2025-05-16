@@ -64,43 +64,6 @@ body {
   transition: 0.3s;
 }
 
-.items:hover .images {
-  opacity: 0.5;
-}
-
-.items:hover .item-overlay {
-  opacity: 1;
-}
-
-.item-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(46, 213, 115, 0.8); /* Match green #2ed573 */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  color: white;
-  padding: 10px;
-  text-align: center;
-}
-
-.item-overlay p {
-  margin: 5px 0;
-  font-size: 1rem;
-  font-weight: bold;
-}
-
-.item-overlay p:nth-child(2) {
-  font-size: 0.9rem;
-  font-weight: normal;
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -144,12 +107,14 @@ body {
 .row .items p {
   color: black;
   font-size: 0.9rem;
+  text-align: center;
+  margin: 5px 0;
 }
 
 .addtocard {
   height: 35px;
   width: 100px;
-  background-color: green;
+  background-color: #2ed573;
   color: white;
   border: none;
   border-radius: 5px;
