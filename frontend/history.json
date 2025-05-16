@@ -195,22 +195,52 @@
     {
       "items": [
         {
+          "image": "/static/images/apple.png",
           "name": "Apple",
-          "price": 3.44,
-          "image": "/static/images/apple.png"
+          "price": 3.44
         },
         {
+          "image": "/static/images/banana.png",
           "name": "Banana",
-          "price": 2,
-          "image": "/static/images/banana.png"
+          "price": 2
         },
         {
+          "image": "/static/images/tteok.png",
           "name": "Tteok",
-          "price": 2.5,
-          "image": "/static/images/tteok.png"
+          "price": 2.5
         }
       ],
       "timestamp": "5/16/2025, 1:34:34 AM"
+    },
+    {
+      "items": [
+        {
+          "image": "/static/images/biryani.png",
+          "name": "Biryani",
+          "price": 3.44
+        },
+        {
+          "image": "/static/images/pizza.png",
+          "name": "Pizza",
+          "price": 2
+        },
+        {
+          "image": "/static/images/roast-chiasioux.com/images/roast-chicken.png",
+          "name": "Roast Chicken",
+          "price": 2.5
+        }
+      ],
+      "timestamp": "5/16/2025, 1:55:28 AM"
+    },
+    {
+      "items": [
+        {
+          "name": "Beer",
+          "price": 3.44,
+          "image": "/static/images/beer-can.png"
+        }
+      ],
+      "timestamp": "5/16/2025, 2:18:04 AM"
     }
   ]
 }
