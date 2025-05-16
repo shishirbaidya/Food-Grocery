@@ -1,7 +1,7 @@
 # `Fruits&Grocery`
 ---
 
-### 19. Deployment Link:
+### Deployment Link:
 - The deployed `**Fruits & Grocery**` project  live link at render -->>> at` https://foodandgrocery.onrender.com/.`
 
 ---
