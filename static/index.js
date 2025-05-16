@@ -1,3 +1,4 @@
+// Item lists
 const foodlist = [
   { name: "Apple", price: 3.44, image: "/static/images/apple.png" },
   { name: "Banana", price: 2.00, image: "/static/images/banana.png" },
@@ -45,9 +46,13 @@ let historyItems = [];
 let currentUser = null;
 const SESSION_TIMEOUT = 30 * 60 * 1000; // 30 minutes in milliseconds
 
-// Shows items in a grid
+// Render items in grid
 function show(grid, listItems) {
   const area = document.getElementById(grid);
+  if (!area) {
+    console.error(`Grid element ${grid} not found`);
+    return;
+  }
   area.innerHTML = "";
   listItems.forEach(list => {
     const card = document.createElement("div");
@@ -57,6 +62,7 @@ function show(grid, listItems) {
     const img = document.createElement("img");
     img.src = list.image;
     img.className = "images";
+    img.alt = list.name; // Accessibility
 
     const overlay = document.createElement("div");
     overlay.className = "item-overlay";
@@ -81,15 +87,20 @@ function show(grid, listItems) {
   });
 }
 
-// Add to cart logic
+// Add item to cart
 function addToCart(item) {
   cartItems.push(item);
   updateCartView();
+  console.log("Added to cart:", item.name); // Debug
 }
 
-// Update cart items in profile
+// Update cart display
 function updateCartView() {
   const table = document.getElementById("cartTable");
+  if (!table) {
+    console.error("Cart table not found");
+    return;
+  }
   table.innerHTML = "";
   cartItems.forEach((item, index) => {
     const row = table.insertRow();
@@ -101,7 +112,7 @@ function updateCartView() {
   });
 }
 
-// Confirm order button
+// Confirm order
 async function confirmOrder() {
   if (cartItems.length === 0) return;
   const order = {
@@ -112,16 +123,25 @@ async function confirmOrder() {
   cartItems = [];
   updateCartView();
   updateHistoryView();
-  await fetch('/api/history', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: currentUser.email, history: historyItems })
-  });
+  try {
+    const response = await fetch('/api/history', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: currentUser.email, history: historyItems })
+    });
+    if (!response.ok) throw new Error("Failed to save history");
+  } catch (error) {
+    console.error("Error saving history:", error);
+  }
 }
 
 // Update purchase history
 function updateHistoryView() {
   const container = document.getElementById("historyContainer");
+  if (!container) {
+    console.error("History container not found");
+    return;
+  }
   container.innerHTML = "";
   historyItems.forEach((order, index) => {
     const orderDiv = document.createElement("div");
@@ -142,6 +162,7 @@ function updateHistoryView() {
       const img = document.createElement("img");
       img.src = item.image;
       img.className = "images";
+      img.alt = item.name;
 
       const nameText = document.createElement("p");
       nameText.textContent = item.name;
@@ -160,7 +181,7 @@ function updateHistoryView() {
   });
 }
 
-// Show only selected section
+// Show selected section
 function showSection(sectionId) {
   if (!isLoggedIn() && sectionId !== "loginSection") {
     showSection("loginSection");
@@ -173,18 +194,16 @@ function showSection(sectionId) {
   document.getElementById("searchBar").style.display = sectionId === "main-view" ? "block" : "none";
 }
 
-// Handle Search
+// Handle search
 function searchItems() {
-  const query = document.getElementById("searchInput").value.toLowerCase();
-  if (query.trim() === "") {
-    // Restore original categorized view when search is empty
+  const query = document.getElementById("searchInput").value.toLowerCase().trim();
+  const allItems = [...foodlist, ...drinksandsnack, ...foods, ...meat_veg];
+  if (!query) {
     show("grid1", foodlist);
     show("grid2", drinksandsnack);
     show("grid3", foods);
     show("grid4", meat_veg);
   } else {
-    // Filter and display search results in grid1
-    const allItems = [...foodlist, ...drinksandsnack, ...foods, ...meat_veg];
     const filtered = allItems.filter(item => item.name.toLowerCase().includes(query));
     show("grid1", filtered);
     show("grid2", []);
@@ -202,7 +221,7 @@ function setUserProfile() {
   }
 }
 
-// Session Management
+// Session management
 function isLoggedIn() {
   const session = localStorage.getItem("session");
   if (!session) return false;
@@ -221,7 +240,7 @@ function setSession(user) {
   }));
 }
 
-// Login/Registration Logic
+// Login/Registration logic
 function showError(message) {
   const error = document.getElementById("errorMessage");
   error.textContent = message;
@@ -257,43 +276,43 @@ async function registerUser() {
     return;
   }
 
-  const response = await fetch('/api/register', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ id, name, email, password })
-  });
-  const result = await response.json();
-  if (!result.success) {
-    showError(result.message);
-    return;
+  try {
+    const response = await fetch('/api/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id, name, email, password })
+    });
+    const result = await response.json();
+    if (!result.success) throw new Error(result.message);
+    showError("Registration successful! Please login.");
+    toggleForms(false);
+  } catch (error) {
+    showError(error.message);
   }
-
-  showError("Registration successful! Please login.");
-  toggleForms(false);
 }
 
 async function loginUser() {
   const id = document.getElementById("loginId").value;
   const password = document.getElementById("loginPassword").value;
 
-  const response = await fetch('/api/login', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ id, password })
-  });
-  const result = await response.json();
-  if (!result.success) {
-    showError(result.message);
-    return;
+  try {
+    const response = await fetch('/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id, password })
+    });
+    const result = await response.json();
+    if (!result.success) throw new Error(result.message);
+    currentUser = result.user;
+    setSession(currentUser);
+    const historyResponse = await fetch(`/api/history?email=${currentUser.email}`);
+    historyItems = (await historyResponse.json()).history || [];
+    setUserProfile();
+    updateHistoryView();
+    showSection("main-view");
+  } catch (error) {
+    showError(error.message);
   }
-
-  currentUser = result.user;
-  setSession(currentUser);
-  const historyResponse = await fetch(`/api/history?email=${currentUser.email}`);
-  historyItems = (await historyResponse.json()).history || [];
-  setUserProfile();
-  updateHistoryView();
-  showSection("main-view");
 }
 
 function logoutUser() {
@@ -307,7 +326,7 @@ function logoutUser() {
   toggleForms(false);
 }
 
-// Init when page loads
+// Initialize on page load
 window.onload = function () {
   show("grid1", foodlist);
   show("grid2", drinksandsnack);
@@ -339,11 +358,13 @@ window.onload = function () {
               historyItems = data.history || [];
               updateHistoryView();
               showSection("main-view");
-            });
+            })
+            .catch(err => console.error("History fetch error:", err));
         } else {
           showSection("loginSection");
         }
-      });
+      })
+      .catch(err => console.error("User fetch error:", err));
   } else {
     showSection("loginSection");
   }
