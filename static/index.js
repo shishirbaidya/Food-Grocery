@@ -1,4 +1,3 @@
-// Product Lists
 const foodlist = [
   { name: "Apple", price: 3.44, image: "/static/images/apple.png" },
   { name: "Banana", price: 2.00, image: "/static/images/banana.png" },
@@ -31,7 +30,7 @@ const foods = [
 ];
 const meat_veg = [
   { name: "Chicken", price: 2.00, image: "/static/images/chicken.png" },
-  { name: "Roast Chicken", price: 2.50, image: "/static/images/roast-chiasioux.com/images/roast-chicken.png" },
+  { name: "Roast Chicken", price: 2.50, image: "/static/images/roast-chicken.png" },
   { name: "Lobster", price: 2.50, image: "/static/images/lobster.png" },
   { name: "Prawn", price: 2.50, image: "/static/images/prawn.png" },
   { name: "Vegetable", price: 2.50, image: "/static/images/vegetable.png" },
@@ -40,20 +39,15 @@ const meat_veg = [
   { name: "SugarCane", price: 2.50, image: "/static/images/sugar-cane.png" }
 ];
 
-
-
-
-
-
-// Global values
+// Globals
 let cartItems = [];
 let historyItems = [];
 let currentUser = null;
 const SESSION_TIMEOUT = 30 * 60 * 1000; // 30 minutes in milliseconds
 
-// Shows items in a row dynamically from js file ,later will shifter to databse
-function show(row, listItems) {
-  const area = document.getElementById(row);
+// Shows items in a grid
+function show(grid, listItems) {
+  const area = document.getElementById(grid);
   area.innerHTML = "";
   listItems.forEach(list => {
     const card = document.createElement("div");
@@ -63,6 +57,9 @@ function show(row, listItems) {
     const img = document.createElement("img");
     img.src = list.image;
     img.className = "images";
+
+    const overlay = document.createElement("div");
+    overlay.className = "item-overlay";
 
     const nameText = document.createElement("p");
     nameText.textContent = list.name;
@@ -75,17 +72,14 @@ function show(row, listItems) {
     button.textContent = "Add To Cart";
     button.onclick = () => addToCart(list);
 
+    overlay.appendChild(nameText);
+    overlay.appendChild(price);
+    overlay.appendChild(button);
     card.appendChild(img);
-    card.appendChild(nameText);
-    card.appendChild(price);
-    card.appendChild(button);
+    card.appendChild(overlay);
     area.appendChild(card);
   });
 }
-
-
-
-
 
 // Add to cart logic
 function addToCart(item) {
@@ -93,12 +87,8 @@ function addToCart(item) {
   updateCartView();
 }
 
-
-
-
 // Update cart items in profile
 function updateCartView() {
-
   const table = document.getElementById("cartTable");
   table.innerHTML = "";
   cartItems.forEach((item, index) => {
@@ -106,12 +96,12 @@ function updateCartView() {
     row.innerHTML = `
       <td>${index + 1}</td>
       <td>${item.name}</td>
-      <td>${item.price.toFixed(2)}</td>
+      <td>$${item.price.toFixed(2)}</td>
     `;
   });
 }
 
-// Confirm order button aslo store item in history
+// Confirm order button
 async function confirmOrder() {
   if (cartItems.length === 0) return;
   const order = {
@@ -122,7 +112,7 @@ async function confirmOrder() {
   cartItems = [];
   updateCartView();
   updateHistoryView();
-  await fetch('/api/history', { 
+  await fetch('/api/history', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email: currentUser.email, history: historyItems })
@@ -188,18 +178,18 @@ function searchItems() {
   const query = document.getElementById("searchInput").value.toLowerCase();
   if (query.trim() === "") {
     // Restore original categorized view when search is empty
-    show("row1", foodlist);
-    show("row2", drinksandsnack);
-    show("row3", foods);
-    show("row4", meat_veg);
+    show("grid1", foodlist);
+    show("grid2", drinksandsnack);
+    show("grid3", foods);
+    show("grid4", meat_veg);
   } else {
-    // Filter and display search results in row1
+    // Filter and display search results in grid1
     const allItems = [...foodlist, ...drinksandsnack, ...foods, ...meat_veg];
     const filtered = allItems.filter(item => item.name.toLowerCase().includes(query));
-    show("row1", filtered);
-    show("row2", []);
-    show("row3", []);
-    show("row4", []);
+    show("grid1", filtered);
+    show("grid2", []);
+    show("grid3", []);
+    show("grid4", []);
   }
 }
 
@@ -319,10 +309,10 @@ function logoutUser() {
 
 // Init when page loads
 window.onload = function () {
-  show("row1", foodlist);
-  show("row2", drinksandsnack);
-  show("row3", foods);
-  show("row4", meat_veg);
+  show("grid1", foodlist);
+  show("grid2", drinksandsnack);
+  show("grid3", foods);
+  show("grid4", meat_veg);
 
   document.getElementById("searchInput").addEventListener("input", searchItems);
   document.getElementById("confirmBtn").addEventListener("click", confirmOrder);
