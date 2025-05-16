@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -7,9 +7,9 @@
 }
 
 body {
-  background-color: #fef9f3;
-  font-family: 'Poppins', sans-serif;
-  color: #2d3748;
+  background-color: #F5F6FA;
+  font-family: 'Open Sans', sans-serif;
+  color: #2C3E50;
   line-height: 1.6;
 }
 
@@ -18,8 +18,8 @@ body {
   grid-template-columns: auto 1fr auto;
   align-items: center;
   padding: 15px 30px;
-  background: linear-gradient(135deg, #ffffff, #fff1e6);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -32,23 +32,23 @@ body {
 .title h1 {
   font-size: 1.9rem;
   font-weight: 700;
-  color: #ff6b6b;
+  color: #3498DB;
 }
 
 .title h2 {
   font-size: 1.25rem;
   font-weight: 500;
-  color: #4a5568;
+  color: #7F8C8D;
 }
 
 .grocery-image {
   height: 60px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: border 0.3s ease;
 }
 
 .grocery-image:hover {
-  transform: scale(1.1);
+  border: 2px solid #3498DB;
 }
 
 .input {
@@ -60,24 +60,23 @@ body {
   padding: 12px 15px;
   width: 350px;
   max-width: 100%;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
+  border: 1px solid #D3D7DC;
+  border-radius: 6px;
   font-size: 1rem;
-  background-color: #ffffff;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  background-color: #FFFFFF;
+  transition: border-color 0.3s;
 }
 
 #searchInput:focus {
   outline: none;
-  border-color: #ff6b6b;
-  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.15);
+  border-color: #3498DB;
 }
 
 .images {
   height: 200px;
   width: 200px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 6px;
   transition: opacity 0.3s ease;
 }
 
@@ -85,20 +84,19 @@ body {
   position: relative;
   height: 300px;
   width: 250px;
-  background: linear-gradient(145deg, #ffffff, #f8edeb);
-  border-radius: 14px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  background-color: #FFFFFF;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: border 0.3s ease;
 }
 
 .items:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border: 2px solid #2ECC71;
 }
 
 .items:hover .images {
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
 .items:hover .item-overlay {
@@ -111,14 +109,14 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(145deg, rgba(255, 107, 107, 0.8), rgba(244, 114, 182, 0.8));
+  background-color: rgba(46, 204, 113, 0.8);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
-  color: #ffffff;
+  color: #FFFFFF;
   padding: 10px;
   text-align: center;
 }
@@ -136,7 +134,7 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   padding: 15px;
   animation: fadeIn 0.5s ease-in;
@@ -152,7 +150,7 @@ body {
   }
 
   .items {
-    flex: 0 0 calc(25% - 15px); /* Approx 4 columns */
+    flex: 0 0 calc(33.33% - 13.33px); /* Approx 3 columns */
     box-sizing: border-box;
   }
 }
@@ -163,7 +161,7 @@ body {
   padding: 15px;
   scroll-snap-type: x mandatory;
   scrollbar-width: thin;
-  scrollbar-color: #ff6b6b #fff1e6;
+  scrollbar-color: #3498DB #F5F6FA;
 }
 
 .row .items {
@@ -179,7 +177,7 @@ body {
 }
 
 .row .items p {
-  color: #2d3748;
+  color: #2C3E50;
   font-size: 0.9rem;
 }
 
@@ -188,34 +186,33 @@ body {
 }
 
 .row::-webkit-scrollbar-thumb {
-  background-color: #ff6b6b;
+  background-color: #3498DB;
   border-radius: 10px;
 }
 
 .row::-webkit-scrollbar-track {
-  background-color: #fff1e6;
+  background-color: #F5F6FA;
 }
 
 .addtocard {
   height: 40px;
   width: 120px;
-  background: linear-gradient(135deg, #4ecdc4, #45b7aa);
-  color: #ffffff;
+  background-color: #3498DB;
+  color: #FFFFFF;
   border: none;
-  border-radius: 10px;
+  border-radius: 6px;
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
-  transition: transform 0.2s, background 0.3s;
+  transition: background-color 0.3s;
 }
 
 .addtocard:hover {
-  transform: scale(1.05);
-  background: linear-gradient(135deg, #45b7aa, #3da899);
+  background-color: #2980B9;
 }
 
 #loginSection {
-  background: linear-gradient(135deg, #fff1e6, #fef9f3);
+  background-color: #F5F6FA;
   padding: 50px 20px;
   min-height: 100vh;
   display: flex;
@@ -225,16 +222,16 @@ body {
 
 .login-container {
   max-width: 450px;
-  background: #ffffff;
+  background: #FFFFFF;
   padding: 35px;
   margin: auto;
-  border-radius: 16px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   text-align: center;
 }
 
 #profileSection {
-  background: linear-gradient(135deg, #fff1e6, #fef9f3);
+  background-color: #F5F6FA;
   padding: 50px 20px;
   min-height: 100vh;
   display: none;
@@ -243,18 +240,18 @@ body {
 
 .profile-container {
   max-width: 900px;
-  background: #ffffff;
+  background: #FFFFFF;
   padding: 35px;
   margin: auto;
-  border-radius: 16px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 h2 {
   font-size: 1.6rem;
   font-weight: 600;
-  color: #2d3748;
-  border-bottom: 2px solid #ff6b6b;
+  color: #2C3E50;
+  border-bottom: 2px solid #3498DB;
   padding-bottom: 10px;
   margin-bottom: 25px;
 }
@@ -262,7 +259,7 @@ h2 {
 h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #2d3748;
+  color: #2C3E50;
   margin: 15px 0;
 }
 
@@ -271,63 +268,61 @@ table {
   border-collapse: separate;
   border-spacing: 0;
   margin-top: 20px;
-  background-color: #ffffff;
-  border-radius: 10px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 th, td {
   padding: 14px 16px;
-  border-bottom: 1px solid #edf2f7;
+  border-bottom: 1px solid #ECF0F1;
   text-align: left;
   font-size: 0.95rem;
 }
 
 th {
-  background-color: #f7fafc;
+  background-color: #F5F6FA;
   font-weight: 600;
-  color: #2d3748;
+  color: #2C3E50;
 }
 
 td {
-  color: #4a5568;
+  color: #7F8C8D;
 }
 
 #confirmBtn, #submitLogin, #submitRegister {
   padding: 12px 28px;
-  background: linear-gradient(135deg, #ff6b6b, #f472b6);
-  color: #ffffff;
+  background-color: #3498DB;
+  color: #FFFFFF;
   border: none;
-  border-radius: 10px;
+  border-radius: 6px;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   margin: 10px 5px;
-  transition: transform 0.2s, background 0.3s;
+  transition: background-color 0.3s;
 }
 
 #confirmBtn:hover, #submitLogin:hover, #submitRegister:hover {
-  transform: scale(1.05);
-  background: linear-gradient(135deg, #f472b6, #ff6b6b);
+  background-color: #2980B9;
 }
 
 #backBtn, #profileBtn, #logoutBtn, #toggleRegister, #toggleLogin {
   padding: 12px 28px;
-  background: linear-gradient(135deg, #4a5568, #2d3748);
-  color: #ffffff;
+  background-color: #2C3E50;
+  color: #FFFFFF;
   border: none;
-  border-radius: 10px;
+  border-radius: 6px;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   margin: 10px 5px;
-  transition: transform 0.2s, background 0.3s;
+  transition: background-color 0.3s;
 }
 
 #backBtn:hover, #profileBtn:hover, #logoutBtn:hover, #toggleRegister:hover, #toggleLogin:hover {
-  transform: scale(1.05);
-  background: linear-gradient(135deg, #2d3748, #4a5568);
+  background-color: #34495E;
 }
 
 .container {
@@ -342,17 +337,16 @@ input[type="text"], input[type="email"], input[type="password"] {
   padding: 12px;
   width: 100%;
   margin: 10px 0;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
+  border: 1px solid #D3D7DC;
+  border-radius: 6px;
   font-size: 1rem;
-  background-color: #ffffff;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  background-color: #FFFFFF;
+  transition: border-color 0.3s;
 }
 
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
   outline: none;
-  border-color: #ff6b6b;
-  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.15);
+  border-color: #3498DB;
 }
 
 @keyframes fadeIn {
@@ -362,17 +356,17 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 @media (max-width: 1024px) {
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 
   .items {
-    width: 200px;
-    height: 260px;
+    width: 250px;
+    height: 300px;
   }
 
   .images {
-    height: 160px;
-    width: 160px;
+    height: 200px;
+    width: 200px;
   }
 }
 
@@ -397,17 +391,17 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
   }
 
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 
   .items {
-    width: 180px;
-    height: 240px;
+    width: 200px;
+    height: 260px;
   }
 
   .images {
-    height: 140px;
-    width: 140px;
+    height: 160px;
+    width: 160px;
   }
 
   .addtocard {
